@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+ * {
+  -webkit-box-sizing: border-box;
+}
+
+ * {
+     font-family: Verdana, Arial, Helvetica, sans-serif;
+ }
