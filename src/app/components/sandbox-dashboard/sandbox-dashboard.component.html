@@ -33,15 +33,65 @@
 
 <div class="p-grid  mainContainer">
     <div class="p-col-2 p-m-3 p-pl-1 p-shadow-7">
-       
-            <div class="sandbox p-ai-center vertical-container">
-                <!--<button class="p-button p-button-icon-only pRipple" type="button">-->
-                    <i class="pi pi-plus-circle" [style]="{'font-size': '2rem'}"></i>
-                    <!--<i class="far fa-plus-circle fa-3x"></i>-->
-                <!--</button>-->
-                <p>NEW SANDBOX</p>
+       <div class="sandbox p-ai-center vertical-container">
+
+           <!-- New sandbox changes starts here -->
+            <i class="pi pi-plus-circle" [style]="{'font-size': '2rem'}" (click)="showModalDialog()"></i>
+              <p>NEW SANDBOX</p>
+
+    <p-dialog header="{{header}}" [(visible)]="displayModal" [modal]="true" [style]="{width: '90vw'}"
+    [draggable]="false" [resizable]="false">
+        <!--<form>-->
+            <div class="p-grid">
+                <div class="p-col-4">
+                    <p class="label">Project Name</p>
+                    <input id="no-outline" type="text" pInputText [max]="36"
+                    [(ngModel)]="projectName"/>
+                    <p class="label">Description</p>
+                    <textarea pInputTextarea [rows]="5" [cols]="30" [(ngModel)]="description"></textarea>
+                </div>
+            <div class="p-col-3">
+                <p class="label">Color</p>
+                <div class="p-grid">
+                <p-radioButton name="colorNameSky" value="sky" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameRed" value="red" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameOrg" value="orange" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameGreen" value="green" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNamePurple" value="Purple" [(ngModel)]="selectedColor"></p-radioButton>
+                </div>
+
+                <div>
+                    <p class="label tags">Tags</p>
+                    <input id="no-outline" type="text" pInputText
+                    [(ngModel)]="tagName" placeholder="Type Tags Here"/>
+                </div>
+                
             </div>
-        
+            <div class="p-col-2">
+                <p class="label">Proejct ID</p>
+                <p [style]="{'text-align':'start'}">123456789</p>
+                <p class="label">Owner</p>
+                <p [style]="{'text-align': 'start'}">Daniel Rothman</p>
+            </div>
+            <div class="p-col-2">
+                <div class="p-text-left disclaimer" >
+                    <p class="p-p-1">{{disclaimerText}}</p>
+                </div>
+            </div>
+    </div>
+        <ng-template pTemplate="footer">
+        <p-button  (click)="displayModal=false" label="CANCEL" styleClass="p-button-text"></p-button>
+        <p-button (click)="createSandbox()" label="CREATE SANDBOX"></p-button>
+        </ng-template>
+        <!--</form>-->
+    </p-dialog>
+
+    <!-- The New sandbox  changes end heres ,
+    it can be made separete file, but need to install MatDialog for that,
+    Pls confirm if we can use that.
+    -->
+
+     </div>
     </div>
     <div class="p-col-2 p-m-3 p-shadow-7 card_height">
         <div class="p-col-10 p-mr-2 p-ml-3">

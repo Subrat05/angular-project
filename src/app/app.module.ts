@@ -17,6 +17,9 @@ import {DropdownModule} from 'primeng/dropdown';
 import {DialogModule} from 'primeng/dialog';
 import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
+// Changes for New Sandbox , added these 2 modules
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
  
 @NgModule({
@@ -37,7 +40,9 @@ declarations: [
     DropdownModule,
     DialogModule,
     RatingModule,
-    RippleModule
+    RippleModule,
+    InputTextareaModule,
+    RadioButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
