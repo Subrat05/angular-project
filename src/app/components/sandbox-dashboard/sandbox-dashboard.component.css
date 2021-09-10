@@ -1,16 +1,4 @@
-.header {
-    background-color: #d8d6d6;
-    /*height: 46px;*/
-    height: 28px;
-}
 
-.filter {
-    padding: 15px;
-}
-
-.disabled{
-    background-color: lighgrey !important;
-}
 
 .mainContainer {
   padding-left: 50px;
@@ -50,49 +38,3 @@
 .expire {
     font-size: 11px;
 }
-
-/* CSS for New Snad box starts here| Ignore the commented CSS */
-
-.label {
-    font-size: 12px;
-    text-align: start;
-    color: lightgrey;
-}
-input {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove;
-  background-color: white;
-  border-color: white !important;
-  width: 300px;
-
-}
-.no-outline:focus {
-  outline: none;
-}
-
-p-radioButton {
-    
-    padding-left: 5px;
-}
-
-/*.p-radiobutton .p-radiobutton-box .p-radiobutton-icon .p-label-focus {
-	color: red !important;
-	background: red !important;
-	border: red !important;
-    border-color: red !important
-}*/
-
-.tags {
-    padding-top: 34px;
-}
-
-.disclaimer {
-    width: 20rem;
-    border: 1px solid lightgrey;
-    font-size: 12px;
-    border-radius: 14px;
-}
-
-/* CSS for New Snad box ends here */

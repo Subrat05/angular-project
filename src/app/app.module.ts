@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
 import { SandboxDashboardComponent } from './components/sandbox-dashboard/sandbox-dashboard.component';
+import { NewSandboxComponent } from './components/new-sandbox/new-sandbox.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -21,11 +24,18 @@ import {RippleModule} from 'primeng/ripple';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {RadioButtonModule} from 'primeng/radiobutton';
 
+
+
+
+
  
 @NgModule({
 declarations: [
     AppComponent,
-    SandboxDashboardComponent
+    HeaderComponent,
+    SandboxDashboardComponent,
+    NewSandboxComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,9 +52,10 @@ declarations: [
     RatingModule,
     RippleModule,
     InputTextareaModule,
-    RadioButtonModule
+    RadioButtonModule,
+    SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

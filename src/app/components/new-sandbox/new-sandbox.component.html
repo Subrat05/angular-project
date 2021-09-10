@@ -1,0 +1,53 @@
+   <!-- Add your header selctor here, check your header.componnt.ts file -->
+    <app-header></app-header> 
+<!--copied from sandbox.compoennt.ts file  -->
+
+        <div class="p-grid p-m-6">    
+                <div class="p-col-4">
+                    <p class="label">Project Name</p>
+                    <input id="no-outline" type="text" pInputText [max]="36"
+                    [(ngModel)]="projectName"/>
+                    <p class="label">Description</p>
+                    <textarea pInputTextarea [rows]="5" [cols]="30" [(ngModel)]="description"></textarea>
+                </div>
+            <div class="p-col-3">
+                <p class="label">Color</p>
+                <div class="p-grid">
+                <p-radioButton name="colorNameSky" value="sky" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameRed" value="red" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameOrg" value="orange" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNameGreen" value="green" [(ngModel)]="selectedColor"></p-radioButton>
+                <p-radioButton name="colorNamePurple" value="Purple" [(ngModel)]="selectedColor"></p-radioButton>
+                </div>
+
+                <div>
+                    <p class="label tags">Tags</p>
+                    <input id="no-outline" type="text" pInputText
+                    [(ngModel)]="tagName" placeholder="Type Tags Here"/>
+                </div>
+                
+            </div>
+            <div class="p-col-2">
+                <p class="label">Proejct ID</p>
+                <p [style]="{'text-align':'start'}">123456789</p>
+                <p class="label">Owner</p>
+                <p [style]="{'text-align': 'start'}">Daniel Rothman</p>
+            </div>
+            <div class="p-col-3">
+                <div class="p-text-left disclaimer" >
+                    <p class="p-p-1">{{disclaimerText}}</p>
+                </div>
+                <div class="p-p-5 p-grid">
+                    <p-button  (click)="back()"label="CANCEL" styleClass="p-button-text"></p-button>
+                    <p-button (click)="createSandbox()" label="CREATE SANDBOX"></p-button>
+                </div>
+            </div>
+        
+  
+    </div>
+    <div class="p-grid p-col-4 p-offset-8">
+        
+    </div>
+    
+        
+

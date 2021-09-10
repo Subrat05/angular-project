@@ -1,27 +1,26 @@
-# MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+1. Created the shared folder, material.module.ts file & shared.module.ts file
+1.1 check the file, but not required to write for U, as already there.
 
-## Development server
+2. Created a new component called "new-sandbox" (give any name)
+2.2 append to the directory where you want to create by bellow command
+2.3 ng g component new-sanbox
+2.4 Verify the file is added in app.module.ts file
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Add the new component in app.routing.ts file 
 
-## Code scaffolding
+import { NewSandboxComponent } from './components/new-sandbox/new-sandbox.component';
+{path: 'newSandbox', component: NewSandboxComponent}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3.1 Verify if the routing is working or not by hitting the below url in chrome
 
-## Build
+http://localhost:4200/newSandbox
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+3.2 I have removed the pop-up files from sand-box.componet file and put in new compoent
 
-## Running unit tests
+check the html, module.ts & CSS files
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ 
+	
