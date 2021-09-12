@@ -4,14 +4,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatInputModule } from '@angular/material/input';
+
+
 
 @NgModule({
     declarations:[],
     imports:[
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule
+        
+        
     ],
     exports: [
-        MatDialogModule
+        MatDialogModule,
+        MatInputModule
+        
+        
     ]
 })
 

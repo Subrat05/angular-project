@@ -3,6 +3,7 @@ import { NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SandboxDashboardComponent } from './components/sandbox-dashboard/sandbox-dashboard.component';
@@ -23,6 +24,8 @@ import {RippleModule} from 'primeng/ripple';
 // Changes for New Sandbox , added these 2 modules
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { ChipModule } from 'primeng/chip';
+
 
 
 
@@ -53,7 +56,8 @@ declarations: [
     RippleModule,
     InputTextareaModule,
     RadioButtonModule,
-    SharedModule
+    SharedModule,
+    ChipModule
   ],
   providers: [],
   bootstrap: [AppComponent],
