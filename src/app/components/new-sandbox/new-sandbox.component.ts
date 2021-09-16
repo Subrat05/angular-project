@@ -34,6 +34,7 @@ export class NewSandboxComponent implements OnInit {
   createSandbox() {
     console.log('createSandbox() method clicked!');
     console.log(this.sandboxForm.value);
+    this.router.navigate(['/createSandbox']);
     
   }
 

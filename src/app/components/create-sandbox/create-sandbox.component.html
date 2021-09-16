@@ -1,0 +1,62 @@
+
+<div class="p-m-6 p-shadow-6 mainClass">
+    <div class="p-grid p-col-1 p-ml-5 colorBox"></div>
+    <div class="p-grid p-ml-5">
+        <div class="p-col-4 p-pt-5">
+            <h1>My Test Sandbox</h1>
+            <h4>Project Description goes here...
+                Project Description goes here...
+                Project Description goes here...</h4>
+        </div>
+        <div class="p-grid p-col-4">
+            <div class="p-grid p-pl-6 margin-top-35">
+                <p>Proejct ID:</p>
+                <p class="label">123456789</p>
+                <p class="p-pl-2">Owner Name:</p>
+                <p class="label">Danie Rothman</p>
+                <span class="p-pl-1">
+                    <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-sm pencil "></button>
+                </span>
+                <span [style]="{'padding-bottom': '50px'}">
+                <p-chip label="Loan" styleClass="custom-chip"></p-chip>
+                <p-chip label="Full Suite" styleClass=" p-ml-2 custom-chip"></p-chip>
+                </span>
+
+            </div>
+        </div>
+        <div class="p-grid p-col-2 p-offset-2">
+            <div class="p-grid p-mt-4">
+                <button pButton pRipple type="button" label="PUBLISH" class="p-button-outlined publish"></button>
+                <button pButton pRipple type="button" label="SHARE" class="p-button-outlined publish p-ml-1"></button>
+                
+            </div>
+            
+            <h4 class="message">Not Started</h4> 
+            
+        </div>
+        
+    </div>
+    <p-divider></p-divider>
+    <div class="p-grid p-ml-5">
+        <div class="p-col-7">
+            <p>Input</p>
+            <textarea rows="7" cols="95" pInputTextarea></textarea>
+            <div class="p-col-2 p-offset-10 ">
+                <i class="pi pi-refresh" style="font-size: 1rem; color: blue"></i>
+                <i class="pi pi-copy p-pl-3" style="font-size: 1rem; color: blue"></i>
+                <i class="pi pi-cloud-upload p-pl-3" style="font-size: 1rem; color: blue"></i>
+            </div>
+        </div>
+        <div class="p-col-5">
+            <p>Output</p>
+            <textarea rows="7" cols="64" pInputTextarea ></textarea>
+        </div>
+
+    </div>
+    <div class="p-grid p-jc-end">
+        <div class="p-col-2">
+            <p-button pRipple  label="CANCEL" styleClass="p-button-text" (click)="cancelToNewSandbox()"></p-button>
+            <p-button pRipple  label="SAVE" class="p-pl-3"></p-button>
+        </div>
+    </div>
+</div>     

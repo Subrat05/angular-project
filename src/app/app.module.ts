@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SandboxDashboardComponent } from './components/sandbox-dashboard/sandbox-dashboard.component';
 import { NewSandboxComponent } from './components/new-sandbox/new-sandbox.component';
+import { CreateSandboxComponent } from './components/create-sandbox/create-sandbox.component';
 import { SharedModule } from './shared/shared.module';
 
 
@@ -25,6 +26,8 @@ import {RippleModule} from 'primeng/ripple';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { ChipModule } from 'primeng/chip';
+import { DividerModule } from 'primeng/divider';
+
 
 
 
@@ -38,6 +41,7 @@ declarations: [
     HeaderComponent,
     SandboxDashboardComponent,
     NewSandboxComponent,
+    CreateSandboxComponent,
     
   ],
   imports: [
@@ -57,7 +61,8 @@ declarations: [
     InputTextareaModule,
     RadioButtonModule,
     SharedModule,
-    ChipModule
+    ChipModule,
+    DividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
