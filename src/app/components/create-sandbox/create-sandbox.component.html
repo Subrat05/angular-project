@@ -1,25 +1,24 @@
 
 <div class="p-m-6 p-shadow-6 mainClass">
-    <div class="p-grid p-col-1 p-ml-5 colorBox"></div>
+    <div class="p-grid p-col-1 p-ml-5 colorBox" 
+    [ngStyle]="{'backgroundColor': colorName}"></div>
     <div class="p-grid p-ml-5">
         <div class="p-col-4 p-pt-5">
-            <h1>My Test Sandbox</h1>
-            <h4>Project Description goes here...
-                Project Description goes here...
-                Project Description goes here...</h4>
+            <h1>{{projectName}}</h1>
+            <h4>{{description}}</h4>
         </div>
         <div class="p-grid p-col-4">
             <div class="p-grid p-pl-6 margin-top-35">
                 <p>Proejct ID:</p>
-                <p class="label">123456789</p>
+                <p class="label">{{projectId}}</p>
                 <p class="p-pl-2">Owner Name:</p>
-                <p class="label">Danie Rothman</p>
+                <p class="label">{{ownerName}}</p>
                 <span class="p-pl-1">
                     <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-rounded p-button-sm pencil "></button>
                 </span>
                 <span [style]="{'padding-bottom': '50px'}">
-                <p-chip label="Loan" styleClass="custom-chip"></p-chip>
-                <p-chip label="Full Suite" styleClass=" p-ml-2 custom-chip"></p-chip>
+                <p-chip styleClass="custom-chip">{{chipBtn1}}</p-chip>
+                <p-chip styleClass=" p-ml-2 custom-chip">{{chipBtn2}}</p-chip>
                 </span>
 
             </div>

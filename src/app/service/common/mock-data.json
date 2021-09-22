@@ -1,0 +1,10 @@
+{
+     "newSandboxHeader" : "New Sandbox",
+     "projectId" : "123456789",
+     "ownerName": "Daniel Rothman",
+     "disclaimerText": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project.",
+     "createSandboxStatus": "Not Started",
+     "chipBtn1": "Loan",
+     "chipBtn2": "Full Suite"
+
+ }

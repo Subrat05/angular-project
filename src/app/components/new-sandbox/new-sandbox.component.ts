@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import  { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { CommonService } from '../../service/common/common.service';
 
-// import {COMMA, ENTER} from '@angular/cdk/keycodes';
-// import { MatChipInputEvent } from '@angular/material/chips'
-// export interface Fruit {
-//   name: string;
-// }
 
 @Component({
   selector: 'app-new-sandbox',
@@ -14,58 +10,44 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
   styleUrls: ['./new-sandbox.component.css']
 })
 export class NewSandboxComponent implements OnInit {
-  header: string = 'New Sandbox';
-  projectName: string = "";
-  description: string = "";
-  selectedColor: string = "";
-  tagName: string = "";
-  disclaimerText: string = "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project.";
+  header: string = "";
+  enteredTagsName: string[] = ['Loan', 'Full Suite'];
+  disclaimerText: string = "";
+  projectId : string = "";
+  ownerName: string = "";
+  chipBtn1: string = "";
+  chipBtn2: string = "";
 
-  constructor(private router: Router) { 
-  }
+  constructor(private router: Router, private formBuilder: FormBuilder,
+   private commonService: CommonService ) { }
   
-  sandboxForm = new FormGroup({
-    projectName: new FormControl(),
-    description:new FormControl(),
-    colorName: new FormControl(),
-    tags: new FormControl()
+  sandboxForm = this.formBuilder.group({
+      projectName: ['', Validators.required],
+      description: ['', Validators.required],
+      colorName: ['', Validators.required],
+      tags: ['']
   });
 
   createSandbox() {
-    console.log('createSandbox() method clicked!');
-    console.log(this.sandboxForm.value);
+    this.commonService.setData("projectName", this.sandboxForm.controls['projectName'].value);
+    this.commonService.setData("description", this.sandboxForm.controls['description'].value);
+    this.commonService.setData("colorName", this.sandboxForm.controls['colorName'].value);
     this.router.navigate(['/createSandbox']);
-    
-  }
-
+    }
   back() {
-    console.log('back button');
     this.router.navigate(['/sandbox']);
   }
 
   ngOnInit(): void {
+      
+      // Here we are getting the data from MockData Service
+     this.header = this.commonService.getMockData().newSandboxHeader;
+     this.disclaimerText = this.commonService.getMockData().disclaimerText;
+     this.projectId = this.commonService.getMockData().projectId;
+     this.ownerName = this.commonService.getMockData().ownerName;
+     this.chipBtn1 = this.commonService.getMockData().chipBtn1;
+     this.chipBtn2 = this.commonService.getMockData().chipBtn2;
+
   }
-
-  /*Changes for tag*/
-
-  //   add(event: MatChipInputEvent): void {
-  //   const value = (event.value || '').trim();
-
-  //   // Add our fruit
-  //   if (value) {
-  //     this.fruits.push({name: value});
-  //   }
-
-  //   // Clear the input value
-  //   event.chipInput!.clear();
-  // }
-
-  // remove(fruit: Fruit): void {
-  //   const index = this.fruits.indexOf(fruit);
-
-  //   if (index >= 0) {
-  //     this.fruits.splice(index, 1);
-  //   }
-  // }
 
 }

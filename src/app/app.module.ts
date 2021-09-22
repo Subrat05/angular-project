@@ -28,7 +28,9 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
 
+// Service 
 
+import { CommonService } from './service/common/common.service';
 
 
 
@@ -64,7 +66,7 @@ declarations: [
     ChipModule,
     DividerModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
