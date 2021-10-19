@@ -1,7 +1,8 @@
 
 /* CSS for New Snad box starts here| Ignore the commented CSS */
 .mainClass {
-    height: 45%;
+    height: 48%;
+    margin: 30px;
 }
 
 .padding-left-20 {
@@ -62,7 +63,8 @@ p-radioButton {
 }
 /* Radio button changes end*/
 .tags {
-    padding-top: 34px;
+    /*padding-top: 30px;*/
+    padding-top: 15px;
 }
 
 :host ::ng-deep .p-chip.custom-chip {
@@ -76,6 +78,11 @@ p-radioButton {
     border: 1px solid lightgrey;
     font-size: 12px;
     border-radius: 14px;
+}
+
+/*add this css */
+.margin-top-20px {
+    margin-top: 20px;
 }
 
 /* CSS for New Snad box ends here */

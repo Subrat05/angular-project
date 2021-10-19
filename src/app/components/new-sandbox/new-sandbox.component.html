@@ -1,18 +1,18 @@
 <app-header></app-header> 
-    <div class="p-m-6 p-shadow-7 mainClass"> 
+    <div class="p-shadow-7 mainClass"> 
         
         <h2 class="padding-left-20 p-pt-2">NEW SANDBOX</h2>
         <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
     <div class="p-grid">
         <div class="p-col-4">
             <div class="padding-left-20">
-            <mat-form-field class="projectName p-pt-2">
+            <mat-form-field class="projectName p-pt-1">
                 <mat-label>Project Name</mat-label>
                 <input matInput #projectName maxlength="36" formControlName="projectName">
                 <mat-hint align="end">{{projectName.value.length}} / 36</mat-hint>
             </mat-form-field>
 
-            <mat-form-field class="description p-pt-2">
+            <mat-form-field class="description margin-top-20px">
                 <mat-label>Description</mat-label>
                 <textarea matInput [rows]="7" [cols]="50" #description maxlength="128" formControlName="description"></textarea>
                 <mat-hint align="end">{{description.value.length}} / 128</mat-hint>
@@ -23,8 +23,6 @@
             <div class="p-col-3">
                 <p class="label">Color</p>
                 <div class="p-grid">
-                
-
                 <p-radioButton styleClass="radio-skyblue" name="colorName" value="skyblue" formControlName="colorName"></p-radioButton>
                 <p-radioButton styleClass="radio-red" name="colorName"  value="red" formControlName="colorName"></p-radioButton>
                 <p-radioButton styleClass="radio-purple" name="colorName" value="purple" formControlName="colorName"></p-radioButton>
@@ -40,7 +38,7 @@
                     <p-chip label="Full Suite" [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip"></p-chip>
                 </div>-->
 
-                <mat-form-field class="tags p-pt-5">
+                <mat-form-field class="tags margin-top-20px">
                     <mat-label>Tags</mat-label>
                     <input matInput class="p-pt-2" formControlName="tags">
                 </mat-form-field>
@@ -53,7 +51,7 @@
             <div class="p-col-2">
                 <p class="label">Proejct ID</p>
                 <p [style]="{'text-align':'start'}">{{projectId}}</p>
-                <p class="label">Owner</p>
+                <p class="label margin-top-20px p-pt-1">Owner</p>
                 <p [style]="{'text-align': 'start'}">{{ownerName}}</p>
             </div>
             <div class="p-col-3">

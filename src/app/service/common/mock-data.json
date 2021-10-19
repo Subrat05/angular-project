@@ -5,6 +5,71 @@
      "disclaimerText": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project.",
      "createSandboxStatus": "Not Started",
      "chipBtn1": "Loan",
-     "chipBtn2": "Full Suite"
+     "chipBtn2": "Full Suite",
+     "sandboxDetails": [
+         {
+        "projectName": "UC-10 Full Suit Dashboard",
+        "description": "UC-10 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "orange",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "Overdue loans by US State",
+        "description": "Overdue loans by US State is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "red",
+        "owner": "Tony Brain",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "UK-10 Full Suit Dashboard",
+        "description": "UK-10 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "green",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "52" },
+        {
+        "projectName": "UC-10 Full Suit Dashboard",
+        "description": "UC-10 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "Purple",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "EU-10 Full Suit Dashboard",
+        "description": "EU-10 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "green",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "NS-89 Full Suit Dashboard",
+        "description": "NS-89 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "skyblue",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "IN-01 Full Suit Dashboard",
+        "description": "IN-01 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "green",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "13" },
+        {
+        "projectName": "IN-90 Full Suit Dashboard",
+        "description": "IN-90 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "orange",
+        "owner": "Subrat Behera",
+        "environment": "PROD",
+        "ExpireInDays": "05" },
+        {
+        "projectName": "IN-05 Full Suit Dashboard",
+        "description": "IN-005 Full Suit Dashboard is a Dahsboard to display various load details, that taken by PSU,Gov.Institutional etc.",
+        "colorName": "Purple",
+        "owner": "You",
+        "environment": "DEV",
+        "ExpireInDays": "21" }
+     ]
 
  }

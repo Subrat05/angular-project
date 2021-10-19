@@ -10,40 +10,40 @@
               <p>NEW SANDBOX</p>
         </div>
     </div>
-    <div class="p-col-2 p-m-3 p-shadow-7 card_height">
+
+    
+    <div *ngFor = "let sandbox of displaySandbox"class="p-col-2 p-m-3 p-shadow-7 card_height">
         <div class="p-col-10 p-mr-2 p-ml-3">
-            <div class="p-grid my-banner" [style]="{'background-color': 'orange'}"></div>
+            <div class="p-grid my-banner" [style.background-color]="sandbox.colorName"></div>
                 <div class="p-mt-2">
                     <span class="owner">
-                        Owner: You
+                        Owner: {{sandbox.owner}}
                         <i class="pi pi-user flot_right"></i>
                     </span>
                 </div>
             <div>
-                <h4 class="box-header">UC-10 Full Suit Dashboard</h4>
-                    <p id="box-text">UC-10 Full Suit Dashboard is a Dahsboard to 
-                        display various load details, that taken by
-                        PSU,Gov.Institutional etc.
-                    </p>
+                <h4 class="box-header">{{sandbox.projectName}}</h4>
+                    <p id="box-text">{{sandbox.description}}</p>
             </div>
             <div>
                 <div class="p-mt-1">
                     <p class="expire">
-                        Expires in 13 days
-                        <span class="flot_right">DEV</span>
+                        Expires in {{sandbox.ExpireInDays}} days
+                        <span class="flot_right">{{sandbox.environment}}</span>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
+<!--
     <div class="p-col-2 p-m-3 p-shadow-7 card_height">
        <div class="p-col-10 p-mr-2 p-ml-3">
             <div class="p-grid my-banner" [style]="{'background-color': 'red'}"></div>
                 <div class="p-mt-2">
                     <span class="owner">
                         Owner: Tony Brain
-                        <!--<i class="pi pi-user flot_right"></i>-->
+                       
                     </span>
                 </div>
             <div>
@@ -148,7 +148,7 @@
                 <div class="p-mt-2">
                     <span class="owner">
                         Owner: Ramkrishna V
-                        <!--<i class="pi pi-user flot_right"></i>-->
+                        
                     </span>
                 </div>
             <div>
@@ -249,6 +249,7 @@
             </div>
         </div> 
     </div>
+    -->
 
 
 </div>
