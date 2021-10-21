@@ -1,27 +1,22 @@
 <app-header></app-header> 
-    <div class="p-shadow-7 mainClass"> 
+<div class="p-shadow-7 mainClass"> 
+    <h2 class="padding-left-20 p-pt-2">NEW SANDBOX</h2>
+    <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
+        <div class="padding-left-20 padding-right-20 p-col-6 p-grid">
         
-        <h2 class="padding-left-20 p-pt-2">NEW SANDBOX</h2>
-        <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
-    <div class="p-grid">
-        <div class="p-col-4">
-            <div class="padding-left-20">
-            <mat-form-field class="projectName p-pt-1">
-                <mat-label>Project Name</mat-label>
-                <input matInput #projectName maxlength="36" formControlName="projectName">
-                <mat-hint align="end">{{projectName.value.length}} / 36</mat-hint>
-            </mat-form-field>
+            <div class="projectName p-pt-1 p-grid">
+                <p class="label">Project Name <span class="red">*</span></p>
+                <input type= "text" pInputText  #projectName maxlength="36" formControlName="projectName" placeholder="Project Name">
+                <!--<small align="end">{{projectName.value.length}} / 36</small>-->
+            </div>
 
-            <mat-form-field class="description margin-top-20px">
-                <mat-label>Description</mat-label>
-                <textarea matInput [rows]="7" [cols]="50" #description maxlength="128" formControlName="description"></textarea>
-                <mat-hint align="end">{{description.value.length}} / 128</mat-hint>
-            </mat-form-field>
-            </div> 
-        </div>      
-                
-            <div class="p-col-3">
-                <p class="label">Color</p>
+            <div class="description margin-top-20px p-grid">
+                <p class="label">Description <span class="red">*</span></p>
+                <textarea pInputTextarea [rows]="6" [cols]="40" #description maxlength="128" formControlName="description" placeholder="Description" class="p-pt-2"></textarea>
+                <!--<mat-hint align="end">{{description.value.length}} / 128</mat-hint>-->
+            </div>
+            <div class="margin-top-20px">
+                <p class="label">Color <span class="red">*</span></p>
                 <div class="p-grid">
                 <p-radioButton styleClass="radio-skyblue" name="colorName" value="skyblue" formControlName="colorName"></p-radioButton>
                 <p-radioButton styleClass="radio-red" name="colorName"  value="red" formControlName="colorName"></p-radioButton>
@@ -29,46 +24,34 @@
                 <p-radioButton styleClass="radio-green" name="colorName" value="green" formControlName="colorName"></p-radioButton>
                 <p-radioButton styleClass="radio-orange" name="colorName" value="orange" formControlName="colorName"></p-radioButton>
                 </div>
-
-                <!--<div>
-                    <p class="label tags">Tags</p>
-                    <input id="no-outline" type="text" pInputText
-                    [(ngModel)]="tagName" placeholder="Type Tags Here"/>
-                    <p-chip label="Loan" [removable]="true" styleClass="p-mt-1 custom-chip"></p-chip>
-                    <p-chip label="Full Suite" [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip"></p-chip>
-                </div>-->
-
-                <mat-form-field class="tags margin-top-20px">
-                    <mat-label>Tags</mat-label>
-                    <input matInput class="p-pt-2" formControlName="tags">
-                </mat-form-field>
-                <p-chip [removable]="true" styleClass="p-mt-1 custom-chip">{{chipBtn1}}</p-chip>
-                <p-chip [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip">{{chipBtn2}}</p-chip>
-                
-        
-                
-            </div>
-            <div class="p-col-2">
+            </div>    
+            <div class="tags margin-top-20px">
+                    <p class="label">Tags<span class="red">*</span></p>
+                    <input type="text" pInputText class="p-pt-2" formControlName="tags">
+                    <p-chip [removable]="true" styleClass="p-mt-1 custom-chip">{{chipBtn1}}</p-chip>
+                    <p-chip [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip">{{chipBtn2}}</p-chip>
+                </div>
+            <div class="width-300px margin-top-20px">
                 <p class="label">Proejct ID</p>
                 <p [style]="{'text-align':'start'}">{{projectId}}</p>
-                <p class="label margin-top-20px p-pt-1">Owner</p>
+            </div>
+            <div class="width-300px margin-top-20px">    
+                <p class="label">Owner</p>
                 <p [style]="{'text-align': 'start'}">{{ownerName}}</p>
             </div>
-            <div class="p-col-3">
-                <div class="p-text-left disclaimer" >
-                    <p class="p-p-1">{{disclaimerText}}</p>
-                </div>
-                <div class="p-p-5 p-grid">
-                    <p-button  (click)="back()"label="CANCEL" styleClass="p-button-text"></p-button>
-                    <p-button  label="CREATE SANDBOX" class="p-pl-2" type="submit"
-                    [disabled]="!sandboxForm.valid"></p-button>
-                </div>
+            <div class="width-300px margin-top-20px ">
+             <p class="label">Disclaimer</p>   
+             <p class="p-pt-1 disclaimer">{{disclaimerText}}</p>   
             </div>
-        
-  
-    </div>
-        </form>
-    </div>
+        </div>
+        <div class="margin-top-20px">
+            <button pButton pRipple type="button" label="CANCEL" class="p-button-secondary" (click)="back()"></button>
+            <button pButton pRipple type="submit" label="CREATE SANDBOX" [disabled]="!sandboxForm.valid" class="p-ml-2"></button>
+            
+            
+        </div>
+     </form>
+</div>
 
     
         
