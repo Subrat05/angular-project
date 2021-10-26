@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import  { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { CommonService } from '../../service/common/common.service';
+import {  INewSandboxObject } from  '../../shared/interface/NewSandboxObject';
 
 
 @Component({
@@ -17,6 +18,10 @@ export class NewSandboxComponent implements OnInit {
   ownerName: string = "";
   chipBtn1: string = "";
   chipBtn2: string = "";
+  // here we created an Interfeace of the response 
+  //that we are getting from mock-json file
+  
+  newSandboxObject:INewSandboxObject[]= [];
 
   constructor(private router: Router, private formBuilder: FormBuilder,
    private commonService: CommonService ) { }
@@ -25,7 +30,9 @@ export class NewSandboxComponent implements OnInit {
       projectName: ['', Validators.required],
       description: ['', Validators.required],
       colorName: ['', Validators.required],
-      tags: ['']
+      tags: [''],
+      prjectLocation: ['']
+
   });
 
   createSandbox() {
@@ -48,6 +55,10 @@ export class NewSandboxComponent implements OnInit {
      this.chipBtn1 = this.commonService.getMockData().chipBtn1;
      this.chipBtn2 = this.commonService.getMockData().chipBtn2;
 
+     // here we are getting the data from mock-json file
+
+     this.newSandboxObject = this.commonService.getMockData().newSandBoxPageDetails;
+     console.log(this.newSandboxObject);
   }
 
 }

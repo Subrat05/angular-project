@@ -1,14 +1,20 @@
 <app-header></app-header> 
 <div class="p-shadow-7 mainClass"> 
-    <h2 class="padding-left-20 p-pt-2">NEW SANDBOX</h2>
+    <h2 class="padding-left-20 p-pt-2">{{newSandboxObject.pageHeader}}</h2>
     <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
         <div class="padding-left-20 padding-right-20 p-col-6 p-grid">
-        
-            <div class="projectName p-pt-1 p-grid">
+            <!-- here we will iterate the object to display -->
+
+            <div *ngFor="let field of newSandboxObject.inputFields" class="projectName margin-top-20px p-grid">
+                <p class="label">{{field.label}} <span *ngIf="field.isrequired" class="red">*</span></p>
+                <input type= "text" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder">
+            </div>
+
+            <!--<div class="projectName margin-top-20px p-grid">
                 <p class="label">Project Name <span class="red">*</span></p>
                 <input type= "text" pInputText  #projectName maxlength="36" formControlName="projectName" placeholder="Project Name">
-                <!--<small align="end">{{projectName.value.length}} / 36</small>-->
-            </div>
+                <small align="end">{{projectName.value.length}} / 36</small>
+            </div>-->
 
             <div class="description margin-top-20px p-grid">
                 <p class="label">Description <span class="red">*</span></p>

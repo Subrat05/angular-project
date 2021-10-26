@@ -70,6 +70,32 @@
         "owner": "You",
         "environment": "DEV",
         "ExpireInDays": "21" }
-     ]
+     ],
+     "newSandBoxPageDetails": {
+        "pageHeader": "NEW SANDBOX",
+         "inputFields": [
+             {
+                 "label": "Project Name",
+                 "formControlName": "projectName",
+                 "isrequired": true,
+                 "fromContolClass": "projectName",
+                 "fieldType": "inputBox", 
+                 "inputType": "text",
+                 "placeholder": "Project Name",
+                 "maxlength": 36
+             },
+             {
+                 "label": "Project Location",
+                 "formControlName": "ProjectLocation",
+                 "isrequired": false,
+                 "fromContolClass": "projectName",
+                 "fieldType": "inputBox", 
+                 "inputType": "text",
+                 "placeholder": "Project Location",
+                 "maxlength": 36
+             }
+         ]
+     }
+     
 
  }
