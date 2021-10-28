@@ -17,15 +17,10 @@
     
 }
 
-.projectName {
+.width-300px {
     width: 300px;
 }
-.description {
-    width: 300px;
-}
-.tags{
-    width: 300px;
-}
+
 /*CSS for radio button*/
 p-radioButton {
     padding-left: 5px;

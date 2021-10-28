@@ -3,11 +3,22 @@
     <h2 class="padding-left-20 p-pt-2">{{newSandboxObject.pageHeader}}</h2>
     <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
         <div class="padding-left-20 padding-right-20 p-col-6 p-grid">
-            <!-- here we will iterate the object to display -->
+            
+            <div *ngFor="let field of newSandboxObject.inputFields" class="width-300px  margin-top-20px p-grid">
+                <div [ngSwitch]="field.fieldType">
+                    <p class="label">{{field.label}} <span *ngIf="field.isrequired" class="red">*</span></p>
 
-            <div *ngFor="let field of newSandboxObject.inputFields" class="projectName margin-top-20px p-grid">
-                <p class="label">{{field.label}} <span *ngIf="field.isrequired" class="red">*</span></p>
-                <input type= "text" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder">
+                    <section *ngSwitchCase="'inputBox'">
+                    <input  [type]="field.inputType" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder">
+                    </section>
+
+                    <section *ngSwitchCase="'textarea'">
+                        <textarea pInputTextarea [rows]="field.rows" [cols]="field.cols"  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder" class="p-pt-2"></textarea>
+                    </section>
+                    
+
+                </div>
+                    
             </div>
 
             <!--<div class="projectName margin-top-20px p-grid">
@@ -15,11 +26,11 @@
                 <input type= "text" pInputText  #projectName maxlength="36" formControlName="projectName" placeholder="Project Name">
                 <small align="end">{{projectName.value.length}} / 36</small>
             </div>-->
-
+            <!-- Comment starts here 
             <div class="description margin-top-20px p-grid">
                 <p class="label">Description <span class="red">*</span></p>
-                <textarea pInputTextarea [rows]="6" [cols]="40" #description maxlength="128" formControlName="description" placeholder="Description" class="p-pt-2"></textarea>
-                <!--<mat-hint align="end">{{description.value.length}} / 128</mat-hint>-->
+                
+                <mat-hint align="end">{{description.value.length}} / 128</mat-hint>
             </div>
             <div class="margin-top-20px">
                 <p class="label">Color <span class="red">*</span></p>
@@ -37,6 +48,8 @@
                     <p-chip [removable]="true" styleClass="p-mt-1 custom-chip">{{chipBtn1}}</p-chip>
                     <p-chip [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip">{{chipBtn2}}</p-chip>
                 </div>
+                Ends here  -->
+
             <div class="width-300px margin-top-20px">
                 <p class="label">Proejct ID</p>
                 <p [style]="{'text-align':'start'}">{{projectId}}</p>

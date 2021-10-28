@@ -78,7 +78,6 @@
                  "label": "Project Name",
                  "formControlName": "projectName",
                  "isrequired": true,
-                 "fromContolClass": "projectName",
                  "fieldType": "inputBox", 
                  "inputType": "text",
                  "placeholder": "Project Name",
@@ -88,11 +87,21 @@
                  "label": "Project Location",
                  "formControlName": "ProjectLocation",
                  "isrequired": false,
-                 "fromContolClass": "projectName",
+                 
                  "fieldType": "inputBox", 
                  "inputType": "text",
                  "placeholder": "Project Location",
                  "maxlength": 36
+             },
+             {
+                 "label": "Description",
+                 "formControlName": "description",
+                 "isrequired": true,
+                 "fieldType": "textarea", 
+                 "placeholder": "Please Enter Description",
+                 "maxlength": 128,
+                 "rows":6,
+                 "cols":40
              }
          ]
      }
