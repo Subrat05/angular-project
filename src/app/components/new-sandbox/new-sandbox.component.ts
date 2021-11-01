@@ -25,16 +25,6 @@ export class NewSandboxComponent implements OnInit {
   constructor(private router: Router,
    private commonService: CommonService ) { }
   
-
-
-  // sandboxForm = this.formBuilder.group({
-  //     projectName: ['', Validators.required],
-  //     description: ['', Validators.required],
-  //     colorName: ['', Validators.required],
-  //     tags: [''],
-  //     projectLocation: ['']
-
-  // });
   
   createDynamicForm(fields: any) {
     console.log( fields);
@@ -78,7 +68,7 @@ export class NewSandboxComponent implements OnInit {
 
      // here we are getting the data from mock-json file
      this.newSandboxObject = this.commonService.getMockData().newSandBoxPageDetails;
-     console.log(this.newSandboxObject);
+     
      
      this.createDynamicForm(this.newSandboxObject.inputFields);
 

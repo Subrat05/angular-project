@@ -84,16 +84,6 @@
                  "maxlength": 36
              },
              {
-                 "label": "Project Location",
-                 "formControlName": "ProjectLocation",
-                 "isrequired": false,
-                 
-                 "fieldType": "inputBox", 
-                 "inputType": "text",
-                 "placeholder": "Project Location",
-                 "maxlength": 36
-             },
-             {
                  "label": "Description",
                  "formControlName": "description",
                  "isrequired": true,
@@ -102,7 +92,55 @@
                  "maxlength": 128,
                  "rows":6,
                  "cols":40
-             }
+             },
+            {
+                "label": "Color Name",
+                 "formControlName": "colorName",
+                 "isrequired": true,
+                 "formControlClass" : "p-grid",
+                 "fieldType": "radioButton",
+                 "buttonName": "colorName",
+                 "buttonList":[
+                     {"buttonValue": "skyblue", "buttonColor":"radio-skyblue" },
+                     {"buttonValue": "red", "buttonColor":"radio-red" },
+                     {"buttonValue": "purple", "buttonColor":"radio-purple" },
+                     {"buttonValue": "green", "buttonColor":"radio-green" },
+                     {"buttonValue": "orange", "buttonColor":"radio-orange" }
+     
+                 ]
+            },
+            {
+                "label":"Tags",
+                "formControlName": "tags",
+                "formControlClass": "p-pt-2",
+                "isrequired": false,
+                "fieldType": "inputChip",
+                "inputType": "text",
+                "placeholder": "",
+                "chips": [
+                    {"chipName": "Loan", "isRemoval":"true","chipStyle": "p-mt-1 custom-chip"},
+                    {"chipName": "Full Suite", "isRemoval":"true","chipStyle": ["p-mt-1",  "p-ml-2"]}
+                ]
+            },
+            {
+                "label": "Project ID",
+                "fieldType": "readonly",
+                "readonlyValue": "123456789",
+                "style": {"text-align": "start"}
+            },
+            {
+                "label": "Owner",
+                "fieldType": "readonly",
+                "readonlyValue": "Daniel Rothman",
+                "style": {"text-align": "start"}
+            },
+            {
+                "label": "Disclaimer",
+                "fieldType": "readonly",
+                "readonlyValue": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project",
+                "style": {"width": "20rem","border": "1px solid lightgrey","font-size": "12px"}
+            }
+            
          ]
      }
      

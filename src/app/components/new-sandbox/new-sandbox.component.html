@@ -15,59 +15,29 @@
                     <section *ngSwitchCase="'textarea'">
                         <textarea pInputTextarea [rows]="field.rows" [cols]="field.cols"  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder" class="p-pt-2"></textarea>
                     </section>
-                    
 
-                </div>
-                    
-            </div>
-
-            <!--<div class="projectName margin-top-20px p-grid">
-                <p class="label">Project Name <span class="red">*</span></p>
-                <input type= "text" pInputText  #projectName maxlength="36" formControlName="projectName" placeholder="Project Name">
-                <small align="end">{{projectName.value.length}} / 36</small>
-            </div>-->
-            <!-- Comment starts here 
-            <div class="description margin-top-20px p-grid">
-                <p class="label">Description <span class="red">*</span></p>
-                
-                <mat-hint align="end">{{description.value.length}} / 128</mat-hint>
-            </div>
-            <div class="margin-top-20px">
-                <p class="label">Color <span class="red">*</span></p>
-                <div class="p-grid">
-                <p-radioButton styleClass="radio-skyblue" name="colorName" value="skyblue" formControlName="colorName"></p-radioButton>
-                <p-radioButton styleClass="radio-red" name="colorName"  value="red" formControlName="colorName"></p-radioButton>
-                <p-radioButton styleClass="radio-purple" name="colorName" value="purple" formControlName="colorName"></p-radioButton>
-                <p-radioButton styleClass="radio-green" name="colorName" value="green" formControlName="colorName"></p-radioButton>
-                <p-radioButton styleClass="radio-orange" name="colorName" value="orange" formControlName="colorName"></p-radioButton>
-                </div>
-            </div>    
-            <div class="tags margin-top-20px">
-                    <p class="label">Tags<span class="red">*</span></p>
-                    <input type="text" pInputText class="p-pt-2" formControlName="tags">
-                    <p-chip [removable]="true" styleClass="p-mt-1 custom-chip">{{chipBtn1}}</p-chip>
-                    <p-chip [removable]="true" styleClass="p-mt-1 p-ml-2 custom-chip">{{chipBtn2}}</p-chip>
-                </div>
-                Ends here  -->
-
-            <div class="width-300px margin-top-20px">
-                <p class="label">Proejct ID</p>
-                <p [style]="{'text-align':'start'}">{{projectId}}</p>
-            </div>
-            <div class="width-300px margin-top-20px">    
-                <p class="label">Owner</p>
-                <p [style]="{'text-align': 'start'}">{{ownerName}}</p>
-            </div>
-            <div class="width-300px margin-top-20px ">
-             <p class="label">Disclaimer</p>   
-             <p class="p-pt-1 disclaimer">{{disclaimerText}}</p>   
+                    <section *ngSwitchCase="'radioButton'">
+                        <div [ngClass]="field.formControlClass">
+                            <div *ngFor="let button of field.buttonList">
+                                <p-radioButton [ngClass]="button.buttonColor" [name]="field.buttonName" [value]="field.buttonValue" [formControlName]="field.formControlName"></p-radioButton>
+                            </div>
+                        </div>     
+                    </section>
+                    <section *ngSwitchCase="'inputChip'">
+                        <input  [type]="field.inputType" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder" [ngClass]="field.formControlClass">
+                        <div *ngFor="let chip of field.chips">
+                            <p-chip [removable]="chip.isRemoval" [ngClass]="chip.chipStyle">{{chip.chipName}}</p-chip>
+                        </div>
+                    </section>
+                    <section *ngSwitchCase="'readonly'">
+                        <p [style]="field.style">{{field.readonlyValue}}</p>
+                    </section>
+                </div>      
             </div>
         </div>
         <div class="margin-top-20px">
             <button pButton pRipple type="button" label="CANCEL" class="p-button-secondary" (click)="back()"></button>
-            <button pButton pRipple type="submit" label="CREATE SANDBOX" [disabled]="!sandboxForm.valid" class="p-ml-2"></button>
-            
-            
+            <button pButton pRipple type="submit" label="CREATE SANDBOX" [disabled]="!sandboxForm.valid" class="p-ml-2"></button>  
         </div>
      </form>
 </div>
