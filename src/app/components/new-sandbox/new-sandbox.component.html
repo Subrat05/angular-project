@@ -1,10 +1,10 @@
 <app-header></app-header> 
 <div class="p-shadow-7 mainClass"> 
-    <h2 class="padding-left-20 p-pt-2">{{newSandboxObject.pageHeader}}</h2>
+    <h2 class="padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>
     <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
         <div class="padding-left-20 padding-right-20 p-col-6 p-grid">
             
-            <div *ngFor="let field of newSandboxObject.inputFields" class="width-300px  margin-top-20px p-grid">
+            <div *ngFor="let field of newSandboxObject.data" class="width-300px  margin-top-20px p-grid">
                 <div [ngSwitch]="field.fieldType">
                     <p class="label">{{field.label}} <span *ngIf="field.isrequired" class="red">*</span></p>
 
@@ -18,9 +18,8 @@
 
                     <section *ngSwitchCase="'radioButton'">
                         <div [ngClass]="field.formControlClass">
-                            <div *ngFor="let button of field.buttonList">
-                                <p-radioButton [ngClass]="button.buttonColor" [name]="field.buttonName" [value]="field.buttonValue" [formControlName]="field.formControlName"></p-radioButton>
-                            </div>
+                            <p-radioButton *ngFor="let button of field.buttonList" 
+                                [inputId]="button.buttonValue"  [name]="button.buttonName" [value]="button.buttonValue" [formControlName]="field.formControlName" [ngClass]="button.buttonColor"></p-radioButton> 
                         </div>     
                     </section>
                     <section *ngSwitchCase="'inputChip'">

@@ -11,15 +11,10 @@ import {  INewSandboxObject } from  '../../shared/interface/NewSandboxObject';
   styleUrls: ['./new-sandbox.component.css']
 })
 export class NewSandboxComponent implements OnInit {
-  header: string = "";
-  enteredTagsName: string[] = ['Loan', 'Full Suite'];
-  disclaimerText: string = "";
-  projectId : string = "";
-  ownerName: string = "";
-  chipBtn1: string = "";
-  chipBtn2: string = "";
+  
   newSandboxObject:any = [];
   sandboxForm : any;
+  globalDATA: any = [];
  
 
   constructor(private router: Router,
@@ -58,19 +53,20 @@ export class NewSandboxComponent implements OnInit {
 
   ngOnInit(): void {
       
-      // Here we are getting the data from MockData Service
-     this.header = this.commonService.getMockData().newSandboxHeader;
-     this.disclaimerText = this.commonService.getMockData().disclaimerText;
-     this.projectId = this.commonService.getMockData().projectId;
-     this.ownerName = this.commonService.getMockData().ownerName;
-     this.chipBtn1 = this.commonService.getMockData().chipBtn1;
-     this.chipBtn2 = this.commonService.getMockData().chipBtn2;
 
-     // here we are getting the data from mock-json file
-     this.newSandboxObject = this.commonService.getMockData().newSandBoxPageDetails;
+     // here we are getting the data from mock-json file this.globalDATA
+
+     this.newSandboxObject = this.commonService.getMockData().ATTRIBUTES;
+     console.log(this.newSandboxObject);
+     
+     // used to creater form dynamically
+     this.globalDATA = this.commonService.getMockData().DATA;
+     console.log("this.globalDATA");
+     // used for header purpose 
+     console.log(this.globalDATA);
      
      
-     this.createDynamicForm(this.newSandboxObject.inputFields);
+     this.createDynamicForm(this.newSandboxObject.data);
 
   }
 

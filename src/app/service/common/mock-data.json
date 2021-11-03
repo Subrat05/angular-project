@@ -1,11 +1,6 @@
 {
      "newSandboxHeader" : "New Sandbox",
-     "projectId" : "123456789",
-     "ownerName": "Daniel Rothman",
-     "disclaimerText": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project.",
      "createSandboxStatus": "Not Started",
-     "chipBtn1": "Loan",
-     "chipBtn2": "Full Suite",
      "sandboxDetails": [
          {
         "projectName": "UC-10 Full Suit Dashboard",
@@ -71,6 +66,7 @@
         "environment": "DEV",
         "ExpireInDays": "21" }
      ],
+
      "newSandBoxPageDetails": {
         "pageHeader": "NEW SANDBOX",
          "inputFields": [
@@ -99,13 +95,13 @@
                  "isrequired": true,
                  "formControlClass" : "p-grid",
                  "fieldType": "radioButton",
-                 "buttonName": "colorName",
+                 
                  "buttonList":[
-                     {"buttonValue": "skyblue", "buttonColor":"radio-skyblue" },
-                     {"buttonValue": "red", "buttonColor":"radio-red" },
-                     {"buttonValue": "purple", "buttonColor":"radio-purple" },
-                     {"buttonValue": "green", "buttonColor":"radio-green" },
-                     {"buttonValue": "orange", "buttonColor":"radio-orange" }
+                     {"buttonName": "colorName", "buttonValue": "skyblue", "buttonColor":"radio-skyblue" },
+                     {"buttonName": "colorName", "buttonValue": "red", "buttonColor":"radio-red" },
+                     {"buttonName": "colorName", "buttonValue": "purple", "buttonColor":"radio-purple" },
+                     {"buttonName": "colorName", "buttonValue": "green", "buttonColor":"radio-green" },
+                     {"buttonName": "colorName", "buttonValue": "orange", "buttonColor":"radio-orange" }
      
                  ]
             },
@@ -144,5 +140,5 @@
          ]
      }
      
-
+     
  }
