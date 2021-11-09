@@ -27,6 +27,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
+import { ChipsModule } from 'primeng/chips';
 
 // Service 
 
@@ -64,7 +65,8 @@ declarations: [
     RadioButtonModule,
     SharedModule,
     ChipModule,
-    DividerModule
+    DividerModule,
+    ChipsModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent],

@@ -23,10 +23,11 @@
                         </div>     
                     </section>
                     <section *ngSwitchCase="'inputChip'">
-                        <input  [type]="field.inputType" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder" [ngClass]="field.formControlClass">
+                        <!--<input  [type]="field.inputType" pInputText  [maxlength]="field.maxlength" [formControlName]="field.formControlName" [placeholder]="field.placeholder" [ngClass]="field.formControlClass">
                         <div *ngFor="let chip of field.chips">
                             <p-chip [removable]="chip.isRemoval" [ngClass]="chip.chipStyle">{{chip.chipName}}</p-chip>
-                        </div>
+                        </div>-->
+                        <p-chips [formControlName]="field.formControlName" [max]= "field.maxlength" separator="," styleClass="p-chips"></p-chips>
                     </section>
                     <section *ngSwitchCase="'readonly'">
                         <p [style]="field.style">{{field.readonlyValue}}</p>
