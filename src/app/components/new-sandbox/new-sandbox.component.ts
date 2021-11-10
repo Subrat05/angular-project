@@ -55,7 +55,7 @@ export class NewSandboxComponent implements OnInit {
       
 
      // here we are getting the data from mock-json file this.globalDATA
-
+     // Old changes start
      this.newSandboxObject = this.commonService.getMockData().ATTRIBUTES;
      console.log(this.newSandboxObject);
      
@@ -64,8 +64,14 @@ export class NewSandboxComponent implements OnInit {
      console.log("this.globalDATA");
      // used for header purpose 
      console.log(this.globalDATA);
-     
-     
+
+     // end
+
+     // New changes for API  starts
+     /*
+     this.commonService.getMockData().subscribe(data => this.newSandboxObject = data.ATTRIBUTES);
+     this.commonService.getMockData().subscribe(serverData => this.globalDATA = serverData.DATA);
+     */
      this.createDynamicForm(this.newSandboxObject.data);
 
   }

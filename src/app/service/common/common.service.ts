@@ -3,6 +3,9 @@
  Pls check the codes if you can add it to existin service.
  */
 import { Injectable } from '@angular/core';
+// check, it may be alreay declared.
+import { HttpClient } from '@angular/common/http';
+
 //const mockData: any = require('../../assets/mock-data.json');
 //import * as mockData from './mock-data.json';
 
@@ -11,12 +14,15 @@ import { Injectable } from '@angular/core';
     
 import * as newMockData from './new-format-mock-data.json';
 
+
 @Injectable()
 export class CommonService {
     // created a object to hold the data
     private sandboxData:any = {};
     //private dummyData = (mockData as any).default;
     private newDummyData = (newMockData as any).default;
+    private isAPICall = true;
+    constructor(private http: HttpClient) {}
     
     setData(option: any, value: any): void {
         this.sandboxData[option] = value;
@@ -28,11 +34,23 @@ export class CommonService {
       // you don't need to write this code, you can just change the url,
     // in your subscribe method.
 
-    getMockData() {
+// Old changes
+getMockData() { 
+    return this.newDummyData;
+}
+
+//New changes for client machine based on tagging
+
+    getMockData1() {
         
-        //return this.dummyData;
-        return this.newDummyData;
+        if(this.isAPICall) {
+            return this.http.get('/new-format-mock-data.json');
+        } else {
+            //return this.dummyData;
+            return this.newDummyData;
+        }
         
+    // end     
     } 
   
 
