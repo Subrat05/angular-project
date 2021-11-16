@@ -24,14 +24,22 @@ export class NewSandboxComponent implements OnInit {
   createDynamicForm(fields: any) {
     console.log( fields);
     let formData:any= {};
+    let chips: any = [];
 
     for(let i = 0 ; i < fields.length; i++) {
-      console.log(fields[i].formControlName)
-      console.log(fields[i].isrequired);
+      //console.log(fields[i].formControlName)
+      //console.log(fields[i].isrequired);
         formData[fields[i].formControlName] =
         fields[i].isrequired ? 
         new FormControl('', Validators.required)
         : new FormControl('');
+        // added logic 
+        if(fields[i].formControlName === 'tags') {
+           fields[i].chips.forEach((chip:any) => {
+             chips.push(chip.chipName);
+           });
+          formData[fields[i].formControlName].value = chips;
+        }
     }
     console.log("formData:");
     console.log(formData)

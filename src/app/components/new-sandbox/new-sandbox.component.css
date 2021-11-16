@@ -48,10 +48,11 @@ p-radioButton {
 /* Radio button changes end*/
 
 
-:host ::ng-deep .p-chip.custom-chip {
-    background: orange;
-    color:black;
-    font-size: 12px;
+ :host ::ng-deep .tags .p-chips-token {
+    background: orange ;
+    color: black ;
+    font-size: 12px ;
+    margin: 1px;
 }
 
 .disclaimer {
