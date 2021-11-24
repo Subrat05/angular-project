@@ -44,6 +44,7 @@
                 "fieldType": "inputChip",
                 "inputType": "text",
                 "placeholder": "",
+                "maxlength": 7,
                 "chips": [
                     {"chipName": "Loan", "isRemoval":"true","chipStyle": "p-mt-1 custom-chip"},
                     {"chipName": "Full Suite", "isRemoval":"true","chipStyle": ["p-mt-1",  "p-ml-2"]}
@@ -74,7 +75,10 @@
 
     "DATA": [
         {
-            "pageHeader": "NEW SANDBOX"
+            "pageHeader": "NEW SANDBOX",
+            "createSandboxStatus": "Not Started",
+            "projectId": "123456789",
+            "ownerName": "Daniel Rothman"
         }
     ],
 

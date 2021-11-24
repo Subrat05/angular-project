@@ -27,8 +27,7 @@ export class NewSandboxComponent implements OnInit {
     let chips: any = [];
 
     for(let i = 0 ; i < fields.length; i++) {
-      //console.log(fields[i].formControlName)
-      //console.log(fields[i].isrequired);
+      
         formData[fields[i].formControlName] =
         fields[i].isrequired ? 
         new FormControl('', Validators.required)
@@ -47,9 +46,10 @@ export class NewSandboxComponent implements OnInit {
   }
 
   createSandbox() {
-    // this.commonService.setData("projectName", this.sandboxForm.controls['projectName'].value);
-    // this.commonService.setData("description", this.sandboxForm.controls['description'].value);
-    // this.commonService.setData("colorName", this.sandboxForm.controls['colorName'].value);
+     this.commonService.setData("projectName", this.sandboxForm.controls['projectName'].value);
+     this.commonService.setData("description", this.sandboxForm.controls['description'].value);
+     this.commonService.setData("colorName", this.sandboxForm.controls['colorName'].value);
+     this.commonService.setData("tags", this.sandboxForm.controls['tags'].value);
     console.log("Inside CreateSandbox() ------------")
     console.log(this.sandboxForm)
     this.router.navigate(['/createSandbox']);
