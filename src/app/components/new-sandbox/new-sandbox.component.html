@@ -1,6 +1,6 @@
 <app-header></app-header> 
 <div class="p-shadow-7 mainClass"> 
-    <h2 class="padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>
+    <h2 class="header padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>
     <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
         <div class="p-pl-5 padding-right-20 p-col-6 p-grid">
             
@@ -28,6 +28,11 @@
                     <section *ngSwitchCase="'readonly'">
                         <p [style]="field.style">{{field.readonlyValue}}</p>
                     </section>
+
+                    <section *ngSwitchCase="'dropdown'">
+                        <p-dropdown [options]="field.FILTER_VALUES" [formControlName]="field.formControlName" [style]="{'width':'300px'}"></p-dropdown>
+                    </section>
+                    
                 </div>      
             </div>
         </div>

@@ -62,11 +62,33 @@
                 "readonlyValue": "Daniel Rothman",
                 "style": {"text-align": "start"}
             },
-            {
+            { 
                 "label": "Disclaimer",
                 "fieldType": "readonly",
                 "readonlyValue": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project",
                 "style": {"width": "20rem","border": "1px solid lightgrey","font-size": "12px"}
+            },
+            {
+                 "label": "",
+                 "formControlName": "dropdown",
+                 "isrequired": true,
+                 "fieldType": "dropdown", 
+                 "FILTER_VALUES": "1,2,3,4"
+            },
+            {
+                 "label": "",
+                 "formControlName": "dropdown",
+                 "isrequired": true,
+                 "fieldType": "dropdown", 
+                 "FILTER_VALUES": "5,6,7,8"
+            },
+            
+            {
+                 "label": "",
+                 "formControlName": "dropdown",
+                 "isrequired": true,
+                 "fieldType": "dropdown", 
+                 "FILTER_VALUES": "9,10,11,12,13"
             }
             
          ]
