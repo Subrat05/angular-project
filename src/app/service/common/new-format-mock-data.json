@@ -8,7 +8,9 @@
                  "fieldType": "inputBox", 
                  "inputType": "text",
                  "placeholder": "Project Name",
-                 "maxlength": 36
+                 "maxlength": 36,
+                 "SOURCE_SYSTEM_ID": 3,
+                 "DATASET_ID": 3
              },
              {
                  "label": "Description",
@@ -18,7 +20,9 @@
                  "placeholder": "Please Enter Description",
                  "maxlength": 128,
                  "rows":6,
-                 "cols":40
+                 "cols":40,
+                 "SOURCE_SYSTEM_ID": 3,
+                 "DATASET_ID": 3
              },
             {
                 "label": "Color Name",
@@ -34,7 +38,9 @@
                      {"buttonName": "colorName", "buttonValue": "green", "buttonColor":"radio-green" },
                      {"buttonName": "colorName", "buttonValue": "orange", "buttonColor":"radio-orange" }
      
-                 ]
+                 ],
+                 "SOURCE_SYSTEM_ID": 3,
+                 "DATASET_ID": 3
             },
             {
                 "label":"Tags",
@@ -48,47 +54,71 @@
                 "chips": [
                     {"chipName": "Loan", "isRemoval":"true","chipStyle": "p-mt-1 custom-chip"},
                     {"chipName": "Full Suite", "isRemoval":"true","chipStyle": ["p-mt-1",  "p-ml-2"]}
-                ]
+                ],
+                "SOURCE_SYSTEM_ID": 3,
+                "DATASET_ID": 3
             },
             {
                 "label": "Project ID",
                 "fieldType": "readonly",
                 "readonlyValue": "123456789",
-                "style": {"text-align": "start"}
+                "style": {"text-align": "start"},
+                "SOURCE_SYSTEM_ID": 3,
+                "DATASET_ID": 3
             },
             {
                 "label": "Owner",
                 "fieldType": "readonly",
                 "readonlyValue": "Daniel Rothman",
-                "style": {"text-align": "start"}
+                "style": {"text-align": "start"},
+                "SOURCE_SYSTEM_ID": 3,
+                "DATASET_ID": 3
             },
             { 
                 "label": "Disclaimer",
                 "fieldType": "readonly",
                 "readonlyValue": "Your new sandbox will automatically be created in the DEV envionment using computing resources that automatically scale to meet the needs of your project",
-                "style": {"width": "20rem","border": "1px solid lightgrey","font-size": "12px"}
+                "style": {"width": "20rem","border": "1px solid lightgrey","font-size": "12px"},
+                "SOURCE_SYSTEM_ID": 3,
+                "DATASET_ID": 3
             },
             {
-                 "label": "",
-                 "formControlName": "dropdown",
+                 "label": "DROPDOWN_1",
+                 "formControlName": "dropdown_1",
                  "isrequired": true,
                  "fieldType": "dropdown", 
-                 "FILTER_VALUES": "1,2,3,4"
+                 "FILTER_VALUES": [1,2,3,4],
+                 "SOURCE_SYSTEM_ID": 3,
+                 "DATASET_ID": 3
             },
             {
-                 "label": "",
-                 "formControlName": "dropdown",
+                 "label": "DROPDOWN_2",
+                 "formControlName": "dropdown_2",
                  "isrequired": true,
                  "fieldType": "dropdown", 
-                 "FILTER_VALUES": "5,6,7,8"
+                 "FILTER_VALUES": [5,6,7,8],
+                 "SOURCE_SYSTEM_ID": 2,
+                 "DATASET_ID": 2
             },
             
             {
-                 "label": "",
-                 "formControlName": "dropdown",
+                 "label": "DROPDOWN_3",
+                 "formControlName": "dropdown_3",
                  "isrequired": true,
                  "fieldType": "dropdown", 
-                 "FILTER_VALUES": "9,10,11,12,13"
+                 "FILTER_VALUES": [9,10,11,12,13],
+                 "SOURCE_SYSTEM_ID": 2,
+                 "DATASET_ID": 2
+            },
+            {
+                "label": "DATE_PIKCER_1",
+                "formControlName": "datepicker_1",
+                "isrequired": true,
+                "fieldType": "datepicker",
+                "SOURCE_SYSTEM_ID": 3,
+                "DATASET_ID": 3
+
+
             }
             
          ]

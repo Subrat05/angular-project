@@ -82,8 +82,31 @@ export class NewSandboxComponent implements OnInit {
       return data;
       
     }
-  
 
+createBuildSystemDropDown(data:any) {
+let buildSystemIds = new Set();
+let buildSystemDropdown:any = { 
+         label: 'BUILD SYSTEM ID',
+         formControlName: 'buildSystemId',
+         fieldType: "dropdown" 
+        };
+
+ for(let i=0; i < data.length; i++) {
+      if (data[i].SOURCE_SYSTEM_ID) {
+          buildSystemIds.add(data[i].SOURCE_SYSTEM_ID);
+      }
+  }
+  console.log("buildSystemIds");
+  console.log(buildSystemIds);
+  buildSystemDropdown.FILTER_VALUES = buildSystemIds;
+  // adding at th begin of the data
+  data.unshift(buildSystemDropdown);
+  return data;
+}
+
+onChangeDropdown(event:any) {
+ console.log(event);
+}
   ngOnInit(): void {
       // here we are getting the data from mock-json file this.globalDATA
      
@@ -102,8 +125,12 @@ export class NewSandboxComponent implements OnInit {
      this.commonService.getMockData().subscribe(data => this.newSandboxObject = data.ATTRIBUTES);
      this.commonService.getMockData().subscribe(serverData => this.globalDATA = serverData.DATA);
      */
-
-    this.newSandboxObject.data = this.getCombineDropdownValues(this.newSandboxObject.data);
+     /*
+     Wil combine the all the dropdown values to single value, 
+     and valus shoul be in string
+     */
+    //this.newSandboxObject.data = this.getCombineDropdownValues(this.newSandboxObject.data);
+    this.newSandboxObject.data = this.createBuildSystemDropDown(this.newSandboxObject.data);
     this.createDynamicForm(this.newSandboxObject.data);
 
   }

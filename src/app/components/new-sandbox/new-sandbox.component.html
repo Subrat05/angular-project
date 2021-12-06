@@ -33,6 +33,9 @@
                         <p-dropdown [options]="field.FILTER_VALUES" [formControlName]="field.formControlName" [style]="{'width':'300px'}"></p-dropdown>
                     </section>
                     
+                    <section *ngSwitchCase= "'datepicker'">
+                         <p-calendar [formControlName]="field.formControlName" placeholder="mm/dd/yyyy"></p-calendar> 
+                    </section>
                 </div>      
             </div>
         </div>
