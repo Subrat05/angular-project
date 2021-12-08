@@ -30,10 +30,14 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
 import { ChipsModule } from 'primeng/chips';
+import { CalendarModule } from "primeng/calendar";
+
 
 // Service 
 
 import { CommonService } from './service/common/common.service';
+import { DynamicFilterComponent } from './components/dynamic-filter/dynamic-filter.component';
+
 
 
 
@@ -47,6 +51,8 @@ declarations: [
     SandboxDashboardComponent,
     NewSandboxComponent,
     CreateSandboxComponent,
+    DynamicFilterComponent
+  
     
   ],
   imports: [
@@ -69,7 +75,8 @@ declarations: [
     SharedModule,
     ChipModule,
     DividerModule,
-    ChipsModule
+    ChipsModule,
+    CalendarModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent],

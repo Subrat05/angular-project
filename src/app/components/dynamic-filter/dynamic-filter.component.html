@@ -1,0 +1,46 @@
+<app-header></app-header> 
+<div class="p-shadow-7 mainClass"> 
+    <h2 class="header padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>
+    <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
+        <div class="p-pl-5 padding-right-20 p-col-6 p-grid">
+            
+            <div *ngFor="let field of newSandboxObject.data" class="width-300px  margin-top-20px p-grid">
+                <div [ngSwitch]="field.COMPONENT_TYPE">
+                    
+                     <section *ngSwitchCase="'Text'">
+                        <p class="label">{{field.SOURCE_SYSTEM_NAME}} <span *ngIf="field.isrequired" class="red">*</span></p>
+                        <input  [type]="field.inputType" pInputText  [maxlength]="field.maxlength" [formControlName]="field.COMPONENT_TYPE">
+                    </section>
+
+                    
+                    <section *ngSwitchCase="'Radio Button'">
+                        <p-radioButton
+                        *ngFor="let filter of field.FILTER_VALUES" 
+                        [name]="field.COMPONENT_TYPE"
+                        [inputId]="filter.filterValue" 
+                        [value]="filter.filterValue" 
+                        [formControlName]="field.COMPONENT_TYPE"
+                        [label]="filter.filterValue"
+                        ></p-radioButton> 
+          
+                    </section>
+                    
+
+                    <section *ngSwitchCase="'dropdown'">
+                        <p class="label">{{field.SOURCE_SYSTEM_NAME}} <span *ngIf="field.isrequired" class="red">*</span></p>
+                        <p-dropdown [options]="field.FILTER_VALUES" [formControlName]="field.COMPONENT_TYPE" [style]="{'width':'300px'}"></p-dropdown>
+                    </section>
+                    
+                    <section *ngSwitchCase= "'Date Picker'">
+                        <p class="label">{{field.SOURCE_SYSTEM_NAME}} <span *ngIf="field.isrequired" class="red">*</span></p>
+                         <p-calendar [formControlName]="field.COMPONENT_TYPE" placeholder="mm/dd/yyyy"></p-calendar> 
+                    </section>
+                </div>      
+            </div>
+        </div>
+     </form>
+</div>
+
+    
+        
+

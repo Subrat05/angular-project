@@ -13,6 +13,14 @@ import { HttpClient } from '@angular/common/http';
     // in your subscribe method.
     
 import * as newMockData from './new-format-mock-data.json';
+// importing the create-new-data.json file
+
+import * as createNewData from './create-new-data.json';
+
+// dynamicFilter json
+
+import * as dynamicFilter from './dynamicFilter-data.json';
+
 
 
 @Injectable()
@@ -22,6 +30,11 @@ export class CommonService {
     //private dummyData = (mockData as any).default;
     private newDummyData = (newMockData as any).default;
     private isAPICall = true;
+
+    private createNewData = (createNewData as any).default;
+
+    private dynamicFilter = (dynamicFilter as any).default;
+
     constructor(private http: HttpClient) {}
     
     setData(option: any, value: any): void {
@@ -52,6 +65,14 @@ getMockData() {
         
     // end     
     } 
-  
+  // ****** Create a new method to get the Form details from "Create-new-data.json" file
+
+  getCreateNewData() {
+    return this.createNewData;
+  }
+
+  getDynamicFilter() {
+      return this.dynamicFilter;
+  }
 
 }

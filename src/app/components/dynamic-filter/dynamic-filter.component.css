@@ -1,0 +1,79 @@
+
+/* CSS for New Snad box starts here| Ignore the commented CSS */
+.mainClass {
+   
+    width: 40%;
+    margin: 30px;
+}
+
+.padding-left-20 {
+    padding-left: 20px;
+}
+.label {
+    font-size: 12px;
+    text-align: start;
+    color:black;
+    font-weight: bold;
+    
+}
+
+.width-300px {
+    width: 300px;
+}
+
+/*CSS for radio button*/
+p-radioButton {
+    padding-left: 5px;
+}
+
+:host ::ng-deep .radio-skyblue .p-radiobutton-box  {
+  background-color:skyblue; 
+}
+
+:host ::ng-deep .radio-red .p-radiobutton-box  {
+    background-color:red; 
+}
+
+:host ::ng-deep .radio-purple .p-radiobutton-box  {
+  background-color:purple; 
+}
+
+:host ::ng-deep .radio-green .p-radiobutton-box  {
+  background-color:green; 
+}
+
+:host ::ng-deep .radio-orange .p-radiobutton-box  {
+  background-color:orange; 
+}
+/* Radio button changes end*/
+
+
+ :host ::ng-deep .tags .p-chips-token {
+    background: orange ;
+    color: black ;
+    font-size: 12px ;
+    margin: 1px;
+}
+
+.disclaimer {
+    width: 20rem;
+    border: 1px solid lightgrey;
+    font-size: 12px;
+    /*border-radius: 14px;*/
+}
+
+/*add this css */
+.margin-top-20px {
+    margin-top: 20px;
+}
+
+.padding-right-20 {
+    padding-right: 20px;
+}
+.red {
+    color: red;
+}
+.width-300px {
+    width: 300px;
+}
+/* CSS for New Snad box ends here */

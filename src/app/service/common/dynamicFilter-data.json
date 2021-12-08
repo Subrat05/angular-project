@@ -1,0 +1,69 @@
+{
+    "ATTRIBUTES": {
+        "data": [
+            
+            {
+                "SOURCE_SYSTEM_ID": 4,
+                "DATASET_ID": 4,
+                "GROUP_CATEGORY": "Daily",
+                "ACTIVE_IND": "Y",
+                "SEQUENCE": 1,
+                "IS_HIDDEN": "N",
+                "COMPONENT_TYPE": "Radio Button",
+                "FILTER_NAME": "Daily",
+                "SOURCE_SYSTEM_NAME": "FFS",
+                "FILTER_ID": 17,  
+                "FILTER_VALUES":[
+                    {"filterValue": "Daily"},
+                    {"filterValue": "Monthly"}
+                ],
+                "IS_MANDATORY": "Y"
+            },
+            {
+                "SOURCE_SYSTEM_ID": 4,
+                "DATASET_ID": 4,
+                "GROUP_CATEGORY": "Daily",
+                "ACTIVE_IND": "Y",
+                "SEQUENCE": 2,
+                "IS_HIDDEN": "Y",
+                "COMPONENT_TYPE": "Date Picker",
+                "FILTER_NAME": "Daily",
+                "SOURCE_SYSTEM_NAME": "FFS",
+                "FILTER_ID": 18,
+                "IS_MANDATORY": "Y",
+                "PARENT_FILTER_ID": 17
+            },
+            {
+                "SOURCE_SYSTEM_ID": 4,
+                "DATASET_ID": 4,
+                "GROUP_CATEGORY": "Daily",
+                "ACTIVE_IND": "Y",
+                "SEQUENCE": 3,
+                "IS_HIDDEN": "Y",
+                "COMPONENT_TYPE": "Text",
+                "FILTER_NAME": "PFM Account Node",
+                "SOURCE_SYSTEM_NAME": "FFS",
+                "FILTER_ID": 19,
+                "IS_MANDATORY": "Y",
+                "PARENT_FILTER_ID": 17
+            }
+
+            
+         ]
+         
+    },
+
+    "DATA": [
+        {
+            "pageHeader": "DYNAMIC FILTER"
+            
+        }
+    ],
+
+    "LOOKUP": [
+
+    ]
+
+
+    
+}
