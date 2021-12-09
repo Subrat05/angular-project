@@ -1,0 +1,46 @@
+<app-header></app-header> 
+
+<div class="p-shadow-7 mainClass"> 
+    <h2>Lookup Mapping</h2>
+    <!--<h2 class="header padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>-->
+    <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
+        <div class="p-pl-5 padding-right-20 p-col-6 p-grid">
+            
+            <div *ngFor="let field of lookupArray" class="width-300px  margin-top-20px p-grid">
+                
+                <div [ngSwitch]="field.FORM_DETAILS.COMPONENT_TYPE">
+                    <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
+                     <section *ngSwitchCase="'text'">
+                        <input  [type]="field.FORM_DETAILS.COMPONENT_TYPE" pInputText  [maxlength]="field.FORM_DETAILS.MAX_LENGTH" [formControlName]="field.FORM_DETAILS.ATTRIBUTE">
+                    </section>
+
+                    <section *ngSwitchCase="'Dropdown'">
+                        <p-dropdown [options]="field.CHILDREN_VALUES" [formControlName]="field.FORM_DETAILS.ATTRIBUTE" [style]="{'width':'300px'}"></p-dropdown>
+                    </section>
+
+                    <section *ngSwitchCase="'Radio'">
+                        <p-radioButton
+                        *ngFor="let filter of field.CHILDREN_VALUES" 
+                        [name]="field.FORM_DETAILS.ATTRIBUTE"
+                        [inputId]="filter" 
+                        [value]="filter" 
+                        [formControlName]="field.FORM_DETAILS.ATTRIBUTE"
+                        [label]="filter"
+                        [style]="{'margin': '2px'}"
+                        ></p-radioButton> 
+          
+                    </section>
+
+                    <section *ngSwitchCase= "'DatePicker'">
+                        <p-calendar [formControlName]="field.FORM_DETAILS.ATTRIBUTE" [placeholder]="field.FORM_DETAILS.FORMAT"></p-calendar> 
+                    </section>
+
+                </div>      
+            </div>
+        </div>
+     </form>
+</div>
+
+    
+        
+

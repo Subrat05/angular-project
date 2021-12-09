@@ -1,0 +1,143 @@
+{
+    "ATTRIBUTES": {
+        "data": [
+            {
+                "ATTRIBUTE": "USECASEID_RADIO",
+                "DISPLAYNAME": "Use Case ID RADIO",
+                "FIELDTYPE": "TextBox",
+                "HELP_TEXT": "Unique Identifier for the use-case....",
+                "ISEDITABLE": "NO",
+                "ISREQUIRED": "Y",
+                "SECTION":"Daily",
+                "COMPONENT_TYPE":"Radio"
+            },
+
+            {   
+
+                "ATTRIBUTE": "PARENT_UC_PHASE",
+                "DISPLAYNAME": "Parent UC Phase",
+                "FIELDTYPE": "Combobox",
+                "HELP_TEXT": "Unique Identifier for the use-case....",
+                "ISEDITABLE": "NO",
+                "ISREQUIRED": "Y",
+                "SECTION":"Monthly",
+                "COMPONENT_TYPE":"Dropdown"
+            },
+            {
+                "ATTRIBUTE": "USECASEID_CHECKBOX",
+                "DISPLAYNAME": "USECASEID_CHECKBOX",
+                "FIELDTYPE": "TextBox",
+                "HELP_TEXT": "Unique Identifier for the use-case....",
+                "ISEDITABLE": "NO",
+                "ISREQUIRED": "Y",
+                "SECTION":"Daily",
+                "COMPONENT_TYPE":"Checkbox"
+            },
+            {
+                "ATTRIBUTE": "USECASEID_TEXT",
+                "DISPLAYNAME": "USECASEID_TEXT",
+                "FIELDTYPE": "TextBox",
+                "HELP_TEXT": "Unique Identifier for the use-case....",
+                "ISEDITABLE": "NO",
+                "ISREQUIRED": "Y",
+                "SECTION":"Monthly",
+                "COMPONENT_TYPE":"text",
+                "MAX_LENGTH": 20
+            },
+            {
+                "ATTRIBUTE": "USECASEID_DATEPICKER",
+                "DISPLAYNAME": "USECASEID_DATEPICKER",
+                "FIELDTYPE": "datepicker",
+                "HELP_TEXT": "Unique Identifier for the use-case....",
+                "ISEDITABLE": "NO",
+                "ISREQUIRED": "Y",
+                "SECTION":"Monthly",
+                "COMPONENT_TYPE":"DatePicker",
+                "FORMAT": "mm/dd/yyyy"
+                
+            }
+        ]
+    },
+
+    "DATA": [
+        {
+	        "USECASeID": "EOT_223",
+	        "PARETNT_UC_PHASE":"Deployed"
+        }
+    ],
+
+    "LOOKUP": [
+        {
+	        "ATTRIBUTE": "PARENT_UC_PHASE",
+	         "CHILDREN": [
+                {
+                    "KEY": "Deployed",
+                    "VALUE": "Deployed"
+                },
+                {
+                    "KEY": " Partially Deployed",
+                    "VALUE": " Partially Deployed"
+                },
+                {   
+                    "KEY": "Not Started",
+                    "VALUE": "Not Started"
+                }
+            ]
+        },
+         {
+	        "ATTRIBUTE": "USECASEID_TEXT",
+	         "CHILDREN": [
+                {
+                    "KEY": "Deployed",
+                    "VALUE": "Deployed"
+                },
+                {
+                    "KEY": " Partially Deployed",
+                    "VALUE": " Partially Deployed"
+                },
+                {   
+                    "KEY": "Not Started",
+                    "VALUE": "Not Started"
+                }
+            ]
+        },
+         {
+	        "ATTRIBUTE": "USECASEID_RADIO",
+	         "CHILDREN": [
+                {
+                    "KEY": "Deployed",
+                    "VALUE": "Deployed"
+                },
+                {
+                    "KEY": " Partially Deployed",
+                    "VALUE": " Partially Deployed"
+                },
+                {   
+                    "KEY": "Not Started",
+                    "VALUE": "Not Started"
+                }
+            ]
+        },
+        {
+            "ATTRIBUTE": "USECASEID_DATEPICKER",
+            "CHILDREN":[
+                {
+                    "KEY": "Deployed",
+                    "VALUE": "Deployed"
+                },
+                {
+                    "KEY": " Partially Deployed",
+                    "VALUE": " Partially Deployed"
+                },
+                {   
+                    "KEY": "Not Started",
+                    "VALUE": "Not Started"
+                }
+            ]
+        }
+
+    ]
+
+
+    
+}

@@ -31,12 +31,14 @@ import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
 import { ChipsModule } from 'primeng/chips';
 import { CalendarModule } from "primeng/calendar";
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 // Service 
 
 import { CommonService } from './service/common/common.service';
 import { DynamicFilterComponent } from './components/dynamic-filter/dynamic-filter.component';
+import { LookupMappingComponent } from './components/lookup-mapping/lookup-mapping.component';
 
 
 
@@ -51,7 +53,8 @@ declarations: [
     SandboxDashboardComponent,
     NewSandboxComponent,
     CreateSandboxComponent,
-    DynamicFilterComponent
+    DynamicFilterComponent,
+    LookupMappingComponent
   
     
   ],
@@ -76,7 +79,8 @@ declarations: [
     ChipModule,
     DividerModule,
     ChipsModule,
-    CalendarModule
+    CalendarModule,
+    CheckboxModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent],

@@ -21,6 +21,11 @@ import * as createNewData from './create-new-data.json';
 
 import * as dynamicFilter from './dynamicFilter-data.json';
 
+//lookup-mapping json 
+
+import * as lookupMapping from './lookup-mapping-data.json';
+
+
 
 
 @Injectable()
@@ -34,6 +39,8 @@ export class CommonService {
     private createNewData = (createNewData as any).default;
 
     private dynamicFilter = (dynamicFilter as any).default;
+
+    private lookupMapping = (lookupMapping as any).default;
 
     constructor(private http: HttpClient) {}
     
@@ -73,6 +80,10 @@ getMockData() {
 
   getDynamicFilter() {
       return this.dynamicFilter;
+  }
+
+  getLookupMapping() {
+      return this.lookupMapping;
   }
 
 }
