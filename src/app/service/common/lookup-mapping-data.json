@@ -134,6 +134,24 @@
                     "VALUE": "Not Started"
                 }
             ]
+        },
+        {
+            "ATTRIBUTE": "USECASEID_CHECKBOX",
+            "CHILDREN":[
+                {
+                    "KEY": "Deployed",
+                    "VALUE": "Deployed"
+                },
+                {
+                    "KEY": " Partially Deployed",
+                    "VALUE": " Partially Deployed"
+                },
+                {
+                    "KEY": "Not Started",
+                    "VALUE": "Not Started"
+                }
+            ]
+
         }
 
     ]

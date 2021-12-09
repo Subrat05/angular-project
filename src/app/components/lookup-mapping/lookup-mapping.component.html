@@ -35,6 +35,17 @@
                         <p-calendar [formControlName]="field.FORM_DETAILS.ATTRIBUTE" [placeholder]="field.FORM_DETAILS.FORMAT"></p-calendar> 
                     </section>
 
+                    <section *ngSwitchCase= "'Checkbox'">
+                        <p-checkbox 
+                        *ngFor="let checkbox of field.CHILDREN_VALUES"
+                        [name]="field.FORM_DETAILS.ATTRIBUTE" 
+                        [formControlName]="field.FORM_DETAILS.ATTRIBUTE"
+                        [value]="checkbox"
+                        [label]="checkbox"
+                        [style]="{'margin': '3px'}"></p-checkbox>
+                    </section>
+                    
+
                 </div>      
             </div>
         </div>
