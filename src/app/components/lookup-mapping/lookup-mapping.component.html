@@ -4,21 +4,24 @@
     <h2>Lookup Mapping</h2>
     <!--<h2 class="header padding-left-20 p-pt-2">{{globalDATA[0].pageHeader}}</h2>-->
     <form [formGroup]="sandboxForm" (ngSubmit)="createSandbox()">
-        <div class="p-pl-5 padding-right-20 p-col-6 p-grid">
+        <div class="p-pl-5 padding-right-20 p-grid p-col-12">
             
-            <div *ngFor="let field of lookupArray" class="width-300px  margin-top-20px p-grid">
+            <div *ngFor="let field of lookupArray" class="margin-top-20px p-col-4">
                 
                 <div [ngSwitch]="field.FORM_DETAILS.COMPONENT_TYPE">
-                    <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
-                     <section *ngSwitchCase="'text'">
+                    
+                     <section *ngSwitchCase="'text'" class="p-col-4">
+                         <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
                         <input  [type]="field.FORM_DETAILS.COMPONENT_TYPE" pInputText  [maxlength]="field.FORM_DETAILS.MAX_LENGTH" [formControlName]="field.FORM_DETAILS.ATTRIBUTE">
                     </section>
 
-                    <section *ngSwitchCase="'Dropdown'">
+                    <section *ngSwitchCase="'Dropdown'" class="p-col-4">
+                        <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
                         <p-dropdown [options]="field.CHILDREN_VALUES" [formControlName]="field.FORM_DETAILS.ATTRIBUTE" [style]="{'width':'300px'}"></p-dropdown>
                     </section>
-
-                    <section *ngSwitchCase="'Radio'">
+ 
+                    <section *ngSwitchCase="'Radio'" class="p-col-4">
+                        <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
                         <p-radioButton
                         *ngFor="let filter of field.CHILDREN_VALUES" 
                         [name]="field.FORM_DETAILS.ATTRIBUTE"
@@ -31,11 +34,13 @@
           
                     </section>
 
-                    <section *ngSwitchCase= "'DatePicker'">
+                    <section *ngSwitchCase= "'DatePicker'" class="p-col-4">
+                        <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
                         <p-calendar [formControlName]="field.FORM_DETAILS.ATTRIBUTE" [placeholder]="field.FORM_DETAILS.FORMAT"></p-calendar> 
                     </section>
 
-                    <section *ngSwitchCase= "'Checkbox'">
+                    <section *ngSwitchCase= "'Checkbox'" class="p-col-4">
+                        <p class="label">{{field.FORM_DETAILS.DISPLAYNAME}} <span *ngIf="field.FORM_DETAILS.ISREQUIRED == 'Y'" class="red">*</span></p>
                         <p-checkbox 
                         *ngFor="let checkbox of field.CHILDREN_VALUES"
                         [name]="field.FORM_DETAILS.ATTRIBUTE" 

@@ -2,7 +2,7 @@
 /* CSS for New Snad box starts here| Ignore the commented CSS */
 .mainClass {
    
-    width: 90%;
+    width: 95%;
     margin: 30px;
 }
 
@@ -14,7 +14,7 @@
     text-align: start;
     color:black;
     font-weight: bold;
-    
+    width: 200px;
 }
 
 .width-300px {
